@@ -1,0 +1,43 @@
+{%extends "EspritTestBundle:Test:popupmail.html.twig" %}
+{% block chams %}
+
+<body> 
+    <h2>
+        <strong> Formulaire De Contact</strong>
+    </h2> 
+    <hr> 
+    <h3>
+        <p> Contacter nous </p>
+    </h3> 
+
+
+    <form role="form" id="fr" method="POST" action='{{path('esprit_test_mail_sendpage')}}'>
+        <p class="form-group form-control-wrap your-subject">
+            <span >
+                {{form_widget(form.nom)}}
+            </span>
+        </p>
+        <p class="form-group form-control-wrap your-subject">
+            <span >
+                {{form_widget(form.from)}}
+            </span>
+        </p>
+        <p class="form-group form-control-wrap your-subject">
+            <span >
+                {{form_widget(form.Subject)}}
+            </span>
+            
+        </p>
+        <p class="form-group form-control-wrap your-subject">
+            <span >
+                {{form_widget(form.text)}}
+            </span>
+        </p>
+
+            {{ form_rest(form) }}
+ 
+        
+    </form>
+
+</body>
+{% endblock %}

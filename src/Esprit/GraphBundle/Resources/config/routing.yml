@@ -1,0 +1,22 @@
+esprit_graph_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: EspritGraphBundle:Default:index }
+
+
+_grapheChartLine:
+    path: /chartLine
+    defaults: { _controller: EspritGraphBundle:Graphe:ChartLine}
+
+_grapheHistogramme:
+    path: /histogramme
+    defaults: { _controller: EspritGraphBundle:Graphe:chartHistogramme}    
+    
+    
+_grapheChartLine1:
+    path: /chartLine1
+    defaults: { _controller: EspritGraphBundle:Graphe:ChartLine1}
+
+_grapheHistogramme1:
+    path: /histogramme1
+    defaults: { _controller: EspritGraphBundle:Graphe:chartHistogramme1}    
+    

@@ -1,0 +1,129 @@
+{% extends "EspritDarkomBundle:Default:Annonceur.html.twig"%}
+{%block  formulaire %}
+    <html>
+        <head>
+            <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" 
+        </head>
+        <body >
+            <form method="POST" style="background-color: #d9d9d9">
+
+    <h1>Ajout d'annonce</h1>
+
+   
+        <table >
+            <tr>
+                <td>
+                    {{form_label(Form.titre,'titre: ')}}
+
+                </td>
+                <td>
+                    {{form_widget(Form.titre) }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{form_label(Form.description,'description: ')}} 
+                </td>
+                <td>
+                    {{form_widget(Form.description)}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{form_label(Form.gouvernorat,'gouvernorat: ')}}
+                </td>
+                <td>
+                    {{form_widget(Form.gouvernorat)}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{form_label(Form.delegation,'delegation: ')}}
+                </td>
+                <td>
+                    {{form_widget(Form.delegation)}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{form_label(Form.type,'type: ')}}
+                </td>
+                <td>
+                    {{form_widget(Form.type)}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{form_label(Form.prix,'prix: ')}}
+                </td>
+                <td>
+                    {{form_widget(Form.prix)}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{form_label(Form.localite,'localite: ')}}
+                </td>
+                <td>
+                    {{form_widget(Form.localite)}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{form_label(Form.nbrepiece,'nbrepiece:  S+')}}
+                </td>
+                <td>
+                    {{form_widget(Form.nbrepiece)}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{form_label(Form.datedebut,'datedebut: ')}}
+                </td>
+                <td>
+                    {{form_widget(Form.datedebut)}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{form_label(Form.datefin,'datefin: ')}}
+                </td>
+                <td>
+                    {{form_widget(Form.datefin)}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{form_label(Form.codepostal,'codepostal: ')}}
+                </td>
+                <td>
+                    {{form_widget(Form.codepostal)}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{form_label(Form.superficie,'superficie: ')}}
+                </td>
+                <td>
+
+                    {{form_widget(Form.superficie)}}
+                </td>
+            </tr>
+            {{ form_rest(Form) }}
+        </table>
+        <table>
+            <tr>
+                <td>
+                    <input type="submit" value="Enregistrer" class="btn " style="background-color: #00e2ec ;color: #000 "/>
+                </td>
+                <td>
+                    <button type="submit" value="Retour" class="btn " style="background-color: #00e2ec ;color: #000 "><a href="http://localhost/darkom/web/app_dev.php/Annonceur">retour</a></button>
+                </td>
+            </tr>
+        
+             <div>  {{socialButtons()}}</div> 
+        </table>
+    </form>
+        </body>
+    </html>
+{%endblock %}

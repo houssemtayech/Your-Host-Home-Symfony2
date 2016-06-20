@@ -1,0 +1,22 @@
+<h1> Liste des commentaires </h1>
+<table border=1>
+    <tr>
+        <th> ID </th>
+        <th> Commentaire </th>
+        <th> Approuver </th>
+        <th> Désapprouver </th>
+
+    </tr>
+    {% for notes in Note %}
+
+        <tr>
+            <td> {{notes.id}} </td>
+            <td> {{notes.commentaire}} </td>
+            <td> <a href="{{path('esprit_darkom_accepter_commentaire',{'id':notes.id})}}"> Approuver </a></td>
+            <td> <a href="{{path('esprit_darkom_refuser_commentaire',{'id':notes.id})}}"> Désapprouver </a></td>
+        </tr>
+
+    {% endfor %}
+
+
+</table>

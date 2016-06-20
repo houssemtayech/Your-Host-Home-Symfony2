@@ -1,0 +1,42 @@
+{# empty Twig template #}
+<h1> liste de vos annonces </h1>
+<table border ="100">
+    <tr>
+        <th> titre </th>
+         <th> descreption </th>
+          <th> gouvernorat </th>
+          <th> delegation </th>
+          <th> datedebut </th>
+          <th> datefin </th>
+          <th> localite </th>
+          <th> prix </th>
+          <th> show picture1</th>
+           
+          
+        <th> supprimer </th>
+        <th> modifier </th>
+    </tr>
+    {% for  evenement in offre %}
+    <tr>
+        
+        <td> {{evenement.titre}} </td>
+        <td> {{evenement.description}} </td>
+        <td> {{evenement.gouvernorat}} </td>
+        <td>  {{evenement.delegation}}</td>
+         
+        <td>  {{evenement.datedebut|date('d/M/Y')}}</td>
+          <td>  {{evenement.datefin|date('d/M/Y')}}</td>
+           <td> {{evenement.localite}} </td>
+            <td> {{evenement.prix}} </td>
+
+            <td> 
+                <a href="{{path("esprit_darkom_my_image_route", {'id':evenement.id })}}">
+                    <img src="{{path('esprit_darkom_my_image_route',{'id':evenement.id})}}" alt=""width="120" height="80"/>
+                </a>
+            </td>
+
+        
+        
+    </tr>
+    {% endfor %}
+</table>

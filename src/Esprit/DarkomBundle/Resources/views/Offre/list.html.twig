@@ -1,0 +1,48 @@
+
+<table border=1>
+    <tr>
+        <th> ID </th>
+        <th> titre </th>
+        <th> type </th>
+        <th> nbrepiece </th>
+        <th> superficie </th>
+        <th> prix </th>
+        <th> description </th>
+        <th> gouvernorat </th>
+        <th> delegation </th>
+        <th> localite </th>
+        <th> codepostal </th>
+        <th> image1 </th>
+        <th> image2 </th>
+        <th> image3 </th>
+        <th> Approuver </th>
+        <th> Désapprouver </th>
+        
+
+    </tr>
+    {% for offres in Offre %}
+
+        <tr>
+            <td> {{offres.id}} </td>
+            <td> {{offres.titre}} </td>
+            <td> {{offres.type}} </td>
+            <td> {{offres.nbrepiece}} </td>
+            <td> {{offres.superficie}} </td>
+            <td> {{offres.prix}} </td>
+            <td> {{offres.description}} </td>
+            <td> {{offres.gouvernorat}} </td>
+            <td> {{offres.delegation}} </td>
+            <td> {{offres.localite}} </td>
+            <td> {{offres.codepostal}} </td>
+            <td> <img  src="{{ path('esprit_darkom_my_image_route', { 'id': offres.id }) }}" alt="" width="120" height="80" /> </td>
+            <td> <img  src="{{ path('esprit_darkom_my_image1_route', { 'id': offres.id }) }}" alt="" width="120" height="80" /> </td>
+            <td> <img  src="{{ path('esprit_darkom_my_image2_route', { 'id': offres.id }) }}" alt="" width="120" height="80" /> </td>
+            <td> <a href="{{path('esprit_darkom_accepter_offre',{'id':offres.id})}}"> Approuver </td>
+            <td> <a href="{{path('esprit_darkom_refuser_offre',{'id':offres.id})}}"> Désapprouver </td>
+            
+        </tr>
+
+    {% endfor %}
+
+
+</table>

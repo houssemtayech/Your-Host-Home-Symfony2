@@ -1,0 +1,31 @@
+esprit_front_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: EspritFrontBundle:Default:index }
+esprit_OffreDetails:
+    path:     /Offre/{id}
+    defaults: { _controller: EspritFrontBundle:Default:offre }
+
+esprit_AfficheCommentaire:
+    path:     /Commentaire/{idOffre}
+    defaults: { _controller: EspritFrontBundle:Commentaire:listCommentaire }
+
+esprit_ajoutCommentaire:
+    path:     /ajoutCommentaire
+    defaults: { _controller: EspritFrontBundle:Commentaire:ajoutCommentaire }
+    
+esprit_deleteCommentaire:
+    path:     /supprimerCommentaire/{id}/{idOffre}
+    defaults: { _controller: EspritFrontBundle:Commentaire:deleteCommentaire }
+    
+esprit_updateCommentaire:
+    path:     /modifierCommentaire/{id}
+    defaults: { _controller: EspritFrontBundle:Commentaire:updateCommentaire }
+esprit_map_homepage:
+    path:     /map
+    defaults: { _controller: EspritFrontBundle:Default:index }
+reserver:
+    path:    /reservation/{id}
+    defaults: { _controller: EspritFrontBundle:Commentaire:reserver}        
+notemoyenne:
+    path:    /note/{id}
+    defaults: { _controller: EspritFrontBundle:Commentaire:note}            

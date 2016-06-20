@@ -1,0 +1,28 @@
+
+
+<table border="2">
+
+    <tr>
+        <th> Id </th>
+        <th> Title</th>
+        <th> Show picture1 </th>
+        <th> Show picture2 </th>
+        <th> Show picture3 </th>
+    </tr>
+    {% for image in offre %}
+
+        <tr>
+            <th>{{image.id}}</th>
+            <th>{{image.titre}}</th>
+            <th>
+                <img  src="{{ path('esprit_darkom_my_image_route', { 'id': image.id }) }}" alt="" width="120" height="80" />
+            </th>
+            <th>
+                <img  src="{{ path('esprit_darkom_my_image1_route', { 'id': image.id }) }}" alt="" width="120" height="80" />
+            </th>
+            <th>
+                <img  src="{{ path('esprit_darkom_my_image2_route', { 'id': image.id }) }}" alt="" width="120" height="80" />
+            </th>
+        </tr>
+    {% endfor %}
+</table>

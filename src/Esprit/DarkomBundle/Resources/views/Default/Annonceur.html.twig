@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Darkom</title>
+
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta name="keywords" content="Template, html, premium, themeforest" />
+    <meta name="description" content="Darkom - YourHost Home">
+    <meta name="author" content="Tsoy">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- GOOGLE FONTS -->
+    <link href="{{asset('http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700')}}" rel='stylesheet' type='text/css'>
+    <link href="{{asset('http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600')}}" rel='stylesheet' type='text/css'>
+    <!-- /GOOGLE FONTS -->
+    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}">
+    <link rel="stylesheet" href="{{asset("css/icomoon.css")}}">
+    <link rel="stylesheet" href="{{asset("css/styles.css")}}">
+    <link rel="stylesheet" href="{{asset("css/mystyles.css")}}">
+    <script src="{{asset("js/modernizr.js")}}"></script>
+
+
+</head>
+
+<body>
+
+    <!-- FACEBOOK WIDGET -->
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "{{asset('//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0')}}";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- /FACEBOOK WIDGET -->
+    <div class="global-wrap">
+        <header id="main-header">
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a class="logo" href="{{asset('index.html')}}">
+                                <img src="{{asset('img/logo-invert.png')}}" alt="Image Alternative text" title="Image Title" />
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-md-offset-2">
+                            
+                        </div
+                        <div class="col-md-4">
+                            <div class="top-user-area clearfix">
+                                
+                                <ul class="top-user-area-list list list-horizontal list-border">
+                                    <li><a href="{{path('modifierAnnonceur',{'id':app.User.id})}}"><span style="color: white">hi {{app.User.prenom}} !</span></a>
+                                    </li>
+                                    <li><a href="{{asset('/darkom/web/app_dev.php/logout')}}">Déconnexion</a>
+                                    </li>
+                                   
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+            </div>
+        <!-- TOP AREA -->
+         <div class="top-area show-onload">
+            <div class="bg-holder full">
+                <div class="bg-mask"></div>
+                <div class="bg-img" style="background-image:url(img/2048x1365.png);"></div>
+                <video class="bg-video hidden-sm hidden-xs" preload="auto" autoplay="true" loop="loop" muted="muted" poster="img/video-bg.jpg">
+                    <source src="{{asset('media/loop4.webm')}}" type="video/webm" />
+                    <source src="{{asset('media/loop4.mp4')}}" type="video/mp4" />
+                </video>
+                
+<div class="bg-front full-height">
+                    <div class="container rel full-height">
+                        <div class="search-tabs search-tabs-bg search-tabs-bottom">
+                                    
+                                <div class="tabbable">
+                                <ul class="nav nav-tabs" id="myTab">
+                                    <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-building-o"></i> <span >ajout Annonce</span></a>
+                                    </li>
+                                   <li ><a href="#tab-2" data-toggle="tab"><i class="fa fa-building-o"></i> <span >liste des annonces ajoutées</span></a>
+                                    </li>
+                                    <li ><a href="#tab-3" data-toggle="tab"><i class="fa fa-building-o"></i> <span >Modification annonce</span></a>
+                                    </li>
+                                    
+                                   
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="tab-1">
+                                       <h2><a href="{{path('ajoutEvennement',{'id':app.User.id})}}">ajouter votre annonce</a></h2>
+                                               
+                                                {% block formulaire %}
+                                                    {% endblock %}
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    </div>
+                                    <div class="tab-pane fade " id="tab-2">
+                                        <h2><a href="{{path('list',{'id':app.User.id})}}">liste des annonces ajoutées</a></h2>
+                                                {% block formulaire1 %}
+                                                    {% endblock %}
+                                            
+                                            
+                                            
+                                            
+                                    </div>
+                                                    <div class="tab-pane fade " id="tab-3">
+                                                     <h2><a href="{{path('esprit_darkom_modifier1',{'id':app.User.id})}}">modifier votre annonce </a></h2>
+                                                  {% block formulaire2 %}
+                                                    {% endblock %}
+
+
+
+
+                                            </div> 
+                                  
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        
+       
+        
+
+
+
+        
+
+        <script src={{asset("js/jquery.js")}}></script>
+        <script src={{asset("js/bootstrap.js")}}></script>
+        <script src={{asset("js/slimmenu.js")}}></script>
+        <script src={{asset("js/bootstrap-datepicker.js")}}></script>
+        <script src={{asset("js/bootstrap-timepicker.js")}}></script>
+        <script src={{asset("js/nicescroll.js")}}></script>
+        <script src={{asset("js/dropit.js")}}></script>
+        <script src={{asset("js/ionrangeslider.js")}}></script>
+        <script src={{asset("js/icheck.js")}}></script>
+        <script src={{asset("js/fotorama.js")}}></script>
+        <script src={{asset("https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false")}}></script>
+        <script src={{asset("js/typeahead.js")}}></script>
+        <script src={{asset("js/card-payment.js")}}></script>
+        <script src={{asset("js/magnific.js")}}></script>
+        <script src={{asset("js/owl-carousel.js")}}></script>
+         <script src={{asset("js/fitvids.js")}}></script>
+         <script src={{asset("js/tweet.js")}}></script>
+         <script src={{asset("js/countdown.js")}}></script>
+         <script src={{asset("js/gridrotator.js")}}></script>
+         <script src={{asset("js/custom.js")}}></script>
+    </div>
+</body>
+
+</html>
+
+

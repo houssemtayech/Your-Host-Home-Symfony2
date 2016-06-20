@@ -1,0 +1,54 @@
+{# empty Twig template #}
+  {% extends "EspritDarkomBundle:Default:Annonceur.html.twig"%}
+{%block  formulaire1 %}
+    <html>
+        <head>
+             <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" 
+        </head>
+        <body>
+             <form method="POST" style="background-color: #d9d9d9">
+<h1> liste de vos annonces </h1>
+<table border ="1">
+    <tr>
+        <th> titre </th>
+         <th> descreption </th>
+          <th> gouvernorat </th>
+          <th> delegation </th>
+          <th> datedebut </th>
+          <th> datefin </th>
+          <th> localite </th>
+             <th> superficie </th>
+          <th> prix </th>
+             <th> code postal </th>
+             <th>  nbrepiece </th>
+         
+           
+          
+        <th> supprimer </th>
+        <th> modifier </th>
+    </tr>
+    {% for  evenement in offre %}
+    <tr>
+        
+        <td> {{evenement.titre}} </td>
+        <td> {{evenement.description}} </td>
+        <td> {{evenement.gouvernorat}} </td>
+        <td>  {{evenement.delegation}}</td>
+         
+        <td>  {{evenement.datedebut|date('d/m/y')}}</td>
+          <td>  {{evenement.datefin|date('d/m/y')}}</td>
+           <td> {{evenement.localite}} </td>
+            <td> {{evenement.superficie}} </td>
+            <td> {{evenement.prix}} </td>
+           <td> {{evenement.codepostal}} </td>
+               <td>  S+{{evenement.nbrepiece}} </td>
+        
+        <td><a href="{{path('esprit_darkom_supprimer',{'id':evenement.id})}}">Supprimer</a></td>
+        <td><a href="{{path('esprit_darkom_modifier1',{'id':evenement.id})}}">modifier</a></td>
+    </tr>
+    {% endfor %}
+</table>
+             </form>
+          </body>
+    </html>
+{%endblock %}         

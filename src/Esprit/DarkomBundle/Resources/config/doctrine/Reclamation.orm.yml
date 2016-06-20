@@ -1,0 +1,43 @@
+Esprit\DarkomBundle\Entity\Reclamation:
+    type: entity
+    table: reclamation
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nom:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        prenom:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        sujet:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        texte:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        dateReclamation:
+            type: date
+            nullable: false
+            comment: ''
+            column: date_reclamation
+    lifecycleCallbacks: {  }

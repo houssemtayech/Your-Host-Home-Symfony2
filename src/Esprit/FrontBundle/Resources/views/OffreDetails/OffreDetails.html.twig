@@ -1,0 +1,199 @@
+{% extends "EspritFrontBundle::layout.html.twig" %}
+
+
+
+{% block audioA %}
+    <left>
+        <div class="dt-sc-one-half column">
+
+            <iframe  width="550" height="100" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/153425116&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+    </left>  
+
+{% endblock %}
+{% block container %}
+    <div class="container">
+
+        <div class="booking-item-details">
+           
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="tabbable booking-details-tabbable">
+                        <ul class="nav nav-tabs" id="myTab">
+                            <h1> Détails de l'annonce </h1>
+<table border ="1">
+    <tr>
+        <th> titre </th>
+         <th> descreption </th>
+          <th> gouvernorat </th>
+          <th> delegation </th>
+          <th> datedebut </th>
+          <th> datefin </th>
+          <th> localite </th>
+             <th> superficie </th>
+            <th> prix </th>
+             <th> code postal </th>
+             <th>  nbrepiece </th>
+             
+           
+          
+        
+    </tr>
+    {% for  evenement in offre %}
+    <tr>
+        
+        <td> {{evenement.titre}} </td>
+        <td> {{evenement.description}} </td>
+        <td> {{evenement.gouvernorat}} </td>
+        <td>  {{evenement.delegation}}</td>
+         
+        <td>  {{evenement.datedebut|date('d/m/y')}}</td>
+          <td>  {{evenement.datefin|date('d/m/y')}}</td>
+           <td> {{evenement.localite}} </td>
+            <td> {{evenement.superficie}} </td>
+            <td> {{evenement.prix}} </td>
+           <td> {{evenement.codepostal}} </td>
+               <td> {{evenement.nbrepiece}} </td>
+           
+       
+    </tr>
+    
+</table>
+<br>
+<br>
+<form method="POST"  action="{{path('reserver',{'id':evenement.id})}}">
+<input class="btn btn-primary" type="submit" value="Reserver"  /></form>
+<br>
+
+
+                            <h4><a href={{path('esprit_map_homepage')}}><i class="fa fa-map-marker"></i> On the Map</a></h4>
+                            
+                            <br>
+                            
+                            <h4><a href={{path('notemoyenne',{'id':evenement.id})}} ><i class="fa fa-pencil"></i> Note moyenne</a></h4>
+                        
+                        </ul>
+  {% endfor %}                     
+                </div>
+                <div class="col-md-6">
+                    <div class="booking-item-meta">
+                       
+                        
+                        <div class="booking-item-rating">
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="gap gap-small"></div>
+
+        </div>
+
+        <h3 class="mb20">Commentaires concernant cette offre de maison</h3>
+        <div class="row row-wrap">
+            <div class="col-md-8">
+                <ul class="booking-item-reviews list">
+                 {% for commentaire in comm %}
+                        <li>
+                            <div class="row">
+
+                                <div class="col-md-10">
+                                    <div class="booking-item-review-content">
+                                        
+                                        <p>commentaire:{{commentaire.commentaire }}</p>
+                                       
+                                        <p> note={{commentaire.note }}</p>
+                                        <p><span class="booking-item-review-more"> </span>
+                                        </p>
+                                        
+                                        <div class="booking-item-review-expand"><span class="booking-item-review-expand-more">Plus <i class="fa fa-angle-down"></i></span><span class="booking-item-review-expand-less">Less <i class="fa fa-angle-up"></i></span>
+                                        </div>
+                                        <ul class="list list-inline text-small">
+
+                                            <li><a href={{path('esprit_updateCommentaire',{'id':commentaire.id})}}><i class="fa fa-pencil"></i>Modifier </a>
+                                            </li>
+
+                                            {% block wezza %}
+
+                                            {% endblock %}
+
+                                            <li><a href={{path('esprit_deleteCommentaire',{'id':commentaire.id,'idOffre':commentaire.idoffre})}}><i class="fa fa-cut"></i>Supprimer </a>
+                                            </li>
+                                        </ul> 
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}   
+
+                </ul>
+
+                <div class="row wrap">
+
+                    <div class="col-md-7">
+                        <ul class="pagination">
+                            <li class="active"><a href={{asset("#")}}>1</a>
+                            </li>
+                            <li><a href={{asset("#")}}>2</a>
+                            </li>
+                            <li><a href={{asset("#")}}>3</a>
+                            </li>
+                            <li><a href={{asset("#")}}>4</a>
+                            </li>
+                            <li><a href={{asset("#")}}>5</a>
+                            </li>
+                            <li><a href={{asset("#")}}>6</a>
+                            </li>
+                            <li><a href={{asset("#")}}>7</a>
+                            </li>
+                            <li class="dots">...</li>
+                            <li><a href={{asset("#")}}>43</a>
+                            </li>
+                            <li class="next"><a href={{asset("#")}}>Next Page</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="gap gap-small">
+                    <div class="box bg-gray">
+                        <ul class="nav nav-tabs" id="myTab">
+                            <li class="active"><a data-toggle="tab"><i class="fa fa-pencil-square">Ecrire votre commentaire</i></a>
+                            </li>
+
+                        </ul>
+
+
+                        <h3> Commentaire </h3>
+                        <form method="POST"  action="{{path('esprit_ajoutCommentaire')}}">
+                            <div class="row">
+                                <div class="col-md-8">
+
+                                    <div class="form-group">
+                                        <textarea name="commentaire" class="form-control" rows="8"  placeholder="Tapez votre commentaire..."></textarea>
+                                    </div>
+
+                                    <input class="btn btn-primary" type="submit" value="Publier"  />
+                                    <input class="btn btn-primary" type="reset" value="Annuler" />
+                                        
+                                   
+                                </div>
+                            </div>
+                            
+                        </form>
+                            </div>
+                    </div>
+                </div>
+
+            </div>
+                            
+        </div>
+    </div>
+    <div class="gap gap-small"></div>
+
+{% endblock %}

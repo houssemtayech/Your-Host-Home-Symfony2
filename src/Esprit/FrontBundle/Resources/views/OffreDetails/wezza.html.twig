@@ -1,0 +1,20 @@
+{% extends "EspritFrontBundle::OffreDetails.html.twig" %}
+
+{% block wezza %}
+    
+    <h3> Commentaire </h3>
+                        <form method="POST"  action="{{path('esprit_updateCommentaire')}}">
+                            <div class="row">
+                                <div class="col-md-8">
+
+                                    <div class="form-group">
+                                        <textarea name="commentaire" class="form-control" rows="8"  placeholder="Tapez votre commentaire..."></textarea>
+                                    </div>
+                                    
+                                    <input class="btn btn-primary" type="submit" value="Publier"  />
+                                    <input class="btn btn-primary" type="reset" value="Annuler" />
+                                </div>
+                                </div>
+                        </form>
+    
+{% endblock %}

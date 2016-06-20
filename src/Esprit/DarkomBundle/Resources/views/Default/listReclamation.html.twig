@@ -1,0 +1,27 @@
+{# empty Twig template #}
+  {% extends "EspritDarkomBundle:Default:Admin.html.twig"%}
+{%block  formulaire3 %}
+<table border="4" >
+      <thead>				
+
+    <tr> 
+        <th>Nom</th><th>Prenom</th><th>Sujet</th><th>Description </th><th>à la date</th><th>Supprimer</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    
+    {% for rec in reclamations %}
+       <tr class="{{ cycle(["", "alt"], loop.index) }}" onclick="selectionner(this)" data-id="{{ rec.id }}"  data-nom="{{ rec.nom }}" data-prenom="{{ rec.prenom }}" data-sujet="{{ rec.sujet }}" data-text="{{ rec.texte }}"  data-dateReclamation="{{ rec.dateReclamation|date('d/m/y')}}">
+            <td>{{ rec.nom }}</td>
+            <td>{{ rec.prenom }}</td>
+            <td>{{ rec.sujet }}</td>
+            <td>{{ rec.texte }}</td>
+            <td>{{ rec.dateReclamation|date('d/m/y')}}</td>
+            
+            <td><a href="{{path('delete_reclamation',{'id':rec.id})}}">Supprimer </a></td>
+      </tr>
+    {% endfor %}
+</tbody>
+</table>
+{%endblock %}  

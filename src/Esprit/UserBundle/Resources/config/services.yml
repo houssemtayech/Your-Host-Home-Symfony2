@@ -1,0 +1,10 @@
+services:
+#    esprit_darkom.example:
+#        class: Esprit\DarkomBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+   redirect.after.login:
+     class: Esprit\UserBundle\Redirection\AfterLoginRedirection
+     arguments: [@router]
+  
+     
+     

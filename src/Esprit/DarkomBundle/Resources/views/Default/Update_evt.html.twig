@@ -1,0 +1,223 @@
+{# empty Twig template #}
+{% extends "EspritDarkomBundle:Default:Annonceur.html.twig"%}
+{%block  formulaire2 %}
+    
+    <html>
+        <head>
+             <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" 
+        </head>
+        <body>
+
+ <form method="POST" style="background-color: #d9d9d9">
+<h1>Mise à jour de l'annonce </h1> 
+<table>
+
+<tr>
+
+<td>
+    {{form_label(Form.titre,'titre: ')}}
+
+</td>
+
+<td>
+
+ {{form_widget(Form.titre)}}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+ {{form_label(Form.description,'description: ')}} 
+
+</td>
+
+<td>
+
+ {{form_widget(Form.description)}}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+ {{form_label(Form.gouvernorat,'gouvernorat: ')}}
+
+</td>
+
+<td>
+
+ {{form_widget(Form.gouvernorat)}}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+ {{form_label(Form.delegation,'delegation: ')}}
+
+</td>
+
+<td>
+
+ {{form_widget(Form.delegation)}}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+    {{form_label(Form.type,'type: ')}}
+
+</td>
+
+<td>
+
+ {{form_widget(Form.type)}}
+
+</td>
+
+</tr>
+<tr>
+
+<td>
+
+ {{form_label(Form.prix,'prix: ')}}
+
+</td>
+
+<td>
+
+ {{form_widget(Form.prix)}}
+
+</td>
+
+</tr>
+</tr>
+<tr>
+
+<td>
+
+ {{form_label(Form.localite,'localite: ')}}
+
+</td>
+
+<td>
+
+ {{form_widget(Form.localite)}}
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+
+ {{form_label(Form.nbrepiece,'nbrepiece:  S+')}}
+
+</td>
+
+<td>
+
+ {{form_widget(Form.nbrepiece)}}
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+
+ {{form_label(Form.codepostal,'codepostal: ')}}
+
+</td>
+
+<td>
+
+ {{form_widget(Form.codepostal)}}
+
+</td>
+
+</tr>
+<tr>
+
+<td>
+
+ {{form_label(Form.superficie,'superficie: ')}}
+
+</td>
+
+<td>
+
+ {{form_widget(Form.superficie)}}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+    {{form_label(Form.datedebut,'datedebut: ')}}
+
+</td>
+
+<td>
+
+ {{form_widget(Form.datedebut)}}
+
+</td>
+
+</tr>
+  <tr>
+
+            <td>
+                {{form_label(Form.datefin,'datefin: ')}}
+
+            </td>
+
+            <td>
+
+                {{form_widget(Form.datefin)}}
+
+            </td>
+
+        </tr>
+ {{ form_rest(Form) }}
+
+</table>
+
+<table>
+
+<tr>
+    <td>
+
+<input type="submit" value="Enregistrer"/>
+ <button type="submit" value="Retour" class="btn " style="background-color: #00e2ec ;color: #ffffff "><a href="http://localhost/darkom/web/app_dev.php/Annonceur">retour</a></button>
+</td>
+
+</tr>
+
+</table>
+ 
+</form>
+        </body>
+    </html>
+   </body>
+    </html>
+{%endblock %}

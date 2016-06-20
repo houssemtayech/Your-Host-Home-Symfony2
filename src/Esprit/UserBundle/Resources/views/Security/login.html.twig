@@ -1,0 +1,32 @@
+{% extends "FOSUserBundle::authentification.html.twig" %}
+
+{% block fos_user_content %}
+{% if error %}
+    <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
+{% endif %}
+ <form role="form" action="{{ path("fos_user_security_check") }}"  method="post" class="login-form">
+    
+    <div class="form-group">
+	<label class="sr-only" for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+	<input type="text" name="_username" required="required"  placeholder="Login..." class="form-username form-control" id="username" value="{{ last_username }}" required="required">
+    </div>      
+    <div class="form-group">
+	<label class="sr-only" for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+	<input type="password" name="_password" placeholder="Mot de passe..." class="form-password form-control" id="password"/>
+       
+    </div>
+    <div class="form-group">    
+	<input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+        <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+        </div>
+         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        
+        <button type="submit" class="btn" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}"> Connexion</button>
+        
+</form>
+
+{% endblock fos_user_content %}
+
+
+
+

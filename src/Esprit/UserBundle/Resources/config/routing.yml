@@ -1,0 +1,15 @@
+esprit_darkom_homepage:
+    path:     /
+    defaults: { _controller: EspritDarkomBundle:Default:index }
+Client:
+    path: /Client
+    defaults: { _controller: EspritDarkomBundle:User:Client }
+Annonceur:
+    path: /Annonceur
+    defaults: { _controller: EspritDarkomBundle:User:Annonceur }
+Admin:
+    path: /Admin
+    defaults: { _controller: EspritDarkomBundle:User:Admin }    
+Erreur:
+    path: /erreur
+    defaults: { _controller: EspritUserBundle:Erreur:Erreur }    

@@ -1,0 +1,68 @@
+esprit_darkom_homepage:
+    path:     /
+    defaults: { _controller: EspritDarkomBundle:Default:index }
+
+Client:
+    path:     /Client
+    defaults: { _controller: EspritDarkomBundle:User:Client }
+Admin:
+    path:     /Admin
+    defaults: { _controller: EspritDarkomBundle:User:Admin }
+Annonceur:
+    path:     /Annonceur
+    defaults: { _controller: EspritDarkomBundle:User:Annonceur }
+Erreur:
+    path:     /erreur
+    defaults: { _controller: EspritDarkomBundle:Default:Erreur } 
+modifierClient:
+    path:     /updateClient/{id}
+    defaults: { _controller: EspritDarkomBundle:Client:update } 
+modifierAnnonceur:
+    path:     /updateAnnonceur/{id}
+    defaults: { _controller: EspritDarkomBundle:Annonceur:update }    
+ajoutEvennement:
+    path: /ajout/{id}
+    defaults: { _controller: EspritDarkomBundle:Offre:ajouterEvt }
+list:
+    path:     /list/{id}
+    defaults: { _controller: EspritDarkomBundle:Offre:listeEvenement_org} 
+esprit_darkom_supprimer:
+    path:    /supprimer/{id}
+    defaults: { _controller: EspritDarkomBundle:Offre:supprimer }
+esprit_darkom_modifier1:
+    path:    /update/{id}
+    defaults: { _controller: EspritDarkomBundle:Offre:updateEvt }    
+
+esprit_darkom_mail_form:
+    path:    /mail
+    defaults: { _controller: EspritDarkomBundle:Mail:new } 
+    
+esprit_darkom_mail_sendpage:
+    path:    /sendmail
+    defaults: { _controller: EspritDarkomBundle:Mail:sendmail } 
+    
+esprit_darkom_mail_succ:
+    path:    /succ
+    defaults: { _controller: EspritDarkomBundle:Mail:index }
+    
+esprit_darkom_mail:
+    path:    /email
+    defaults: { _controller: EspritDarkomBundle:Default:email } 
+esprit_darkom_rechercheOffre:
+    path:     /recherche
+    defaults: { _controller: EspritDarkomBundle:Offre:rechercheOffre } 
+    
+ajout_reclamation:
+    path:     /ajoutReclamation
+    defaults: { _controller: EspritDarkomBundle:Reclamation:ajoutReclamation }   
+
+list_reclamation:
+    path:     /listReclamation
+    defaults: { _controller: EspritDarkomBundle:Reclamation:listReclamation }
+    
+delete_reclamation:
+    path:     /deleteReclamation/{id}
+    defaults: { _controller: EspritDarkomBundle:Reclamation:deleteReclamation }
+esprit_darkom_détalis:
+    path:    /details/{id}
+    defaults: { _controller: EspritDarkomBundle:Offre:listedetails_org }

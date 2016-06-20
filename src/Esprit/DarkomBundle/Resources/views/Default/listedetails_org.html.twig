@@ -1,0 +1,43 @@
+{# empty Twig template #}
+{% extends "EspritDarkomBundle:Default:Client.html.twig"%}
+{%block  f %}
+<h1> Détails de l'annonce </h1>
+<table border ="1">
+    <tr>
+        <th> titre </th>
+         <th> descreption </th>
+          <th> gouvernorat </th>
+          <th> delegation </th>
+          <th> datedebut </th>
+          <th> datefin </th>
+          <th> localite </th>
+             <th> superficie </th>
+            <th> prix </th>
+             <th> code postal </th>
+             <th>  nbrepiece </th>
+             <th>  Commentaires </th>
+           
+          
+        
+    </tr>
+    {% for  evenement in offre %}
+    <tr>
+        
+        <td> {{evenement.titre}} </td>
+        <td> {{evenement.description}} </td>
+        <td> {{evenement.gouvernorat}} </td>
+        <td>  {{evenement.delegation}}</td>
+         
+        <td>  {{evenement.datedebut|date('d/m/y')}}</td>
+          <td>  {{evenement.datefin|date('d/m/y')}}</td>
+           <td> {{evenement.localite}} </td>
+            <td> {{evenement.superficie}} </td>
+            <td> {{evenement.prix}} </td>
+           <td> {{evenement.codepostal}} </td>
+               <td> {{evenement.nbrepiece}} </td>
+              <td> <a href="{{path('esprit_AfficheCommentaire',{'id':evenement.id})}}">afficher commentaire </a> </td>
+       
+    </tr>
+    {% endfor %}
+</table>
+{%endblock %}

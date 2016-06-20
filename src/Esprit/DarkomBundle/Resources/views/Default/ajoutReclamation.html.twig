@@ -1,0 +1,36 @@
+{# empty Twig template #}
+  {% extends "EspritDarkomBundle:Default:Client.html.twig"%}
+  
+{%block  formulaire2 %}
+<form method="POST">
+<table>
+    
+    
+    <tr> 
+        <td><input type="text" id="text3" name="nom"  placeholder="le nom de la personne" required="required" /></td>      
+    </tr>
+    
+     <tr> 
+        <td><input type="text" id="text3" name="prenom"  placeholder="le prenom de la personne" required="required" /></td>      
+    </tr>  
+    
+      
+    <tr> 
+        <td><input type="text" id="text3" name="sujet"  placeholder="le sujet de la réclamation" required="required"  /></td>      
+    </tr>
+    <tr>
+        <td><textarea maxlength="6000" id="text3" name="texte" placeholder="Saisisser une discription de la situation et le nom de celui dont vous voulez réclamer si ça intéresse une personne en particulier " required="required"></textarea></td>
+    </tr>
+    
+    
+    
+    <tr>
+        <td><input type="submit" value="Réclamer" /></td>
+    </tr>
+</table>
+   
+     
+    
+
+   </form>  
+{%endblock %}  
